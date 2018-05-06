@@ -8,10 +8,13 @@ public class FortuneTeller {
 
 		System.out.println("Hello, what is your first name?");
 		String firstName = input.next();
+
 		System.out.println("Thank you! What is your last name?");
 		String lastName = input.next();
+
 		System.out.println("Great! How old are you?");
 		int age = input.nextInt();
+
 		System.out.println("Doing great! What month were you born (please give the numerical answer)?");
 		int birthMonth = input.nextInt();
 
@@ -25,22 +28,81 @@ public class FortuneTeller {
 			System.out.println("You can pick from the colors: RED, ORANGE, YELLOW, GREEN, BLUE, INDIGO, VIOLET");
 			favColor = input.nextLine();
 
-	
 		}
-		System.out.println("How many siblings do you have?");
-		String siblings = input.nextLine(); 
-		
-		int retirementAge = 0; 
-		
-		if (age % 2 == 0) {
-		System.out.println("You will retire in 20 years.");
-		
-		}else {
-			System.out.println("You will retire in 5 years.");
-		}
-		
-		
-		
-	}
+		System.out.println("Awesome! How many siblings do you have?");
+		int siblings = input.nextInt();
 
+		String retirementAge = "0";
+
+		if (age % 2 == 0) {
+			retirementAge = "20 years";
+
+		} else {
+			retirementAge = "5 years";
+		}
+
+		String vacationHome;
+
+		if (siblings == 0) {
+			vacationHome = "Naples, Florida";
+
+		} else if (siblings == 1) {
+			vacationHome = "Cancun, Mexico";
+
+		} else if (siblings == 2) {
+			vacationHome = "Pierre, South Dakota";
+
+		} else if (siblings == 3) {
+			vacationHome = "Paris, France";
+
+		} else if (siblings > 3) {
+			vacationHome = "Miami, Florida";
+
+		} else {
+			vacationHome = "hmmm...check how many siblings you have again!";
+		}
+
+		String transportation;
+
+		if (favColor.equalsIgnoreCase("red")) {
+			transportation = "Tesla";
+
+		} else if (favColor.equalsIgnoreCase("orange")) {
+			transportation = "walking";
+
+		} else if (favColor.equalsIgnoreCase("yellow")) {
+			transportation = "mini-van";
+
+		} else if (favColor.equalsIgnoreCase("green")) {
+			transportation = "bicycle";
+
+		} else if (favColor.equalsIgnoreCase("blue")) {
+			transportation = "motorcycle";
+
+		} else if (favColor.equalsIgnoreCase("indigo")) {
+			transportation = "public bus";
+
+		} else {
+			transportation = "horse";
+		}
+
+		String balance;
+
+		if (birthMonth >= 1 && birthMonth <= 4) {
+			balance = "$300,000";
+
+		} else if (birthMonth >= 5 && birthMonth <= 8) {
+			balance = "$2,500,000";
+
+		} else if (birthMonth >= 9 && birthMonth <= 12) {
+			balance = "$42.00";
+
+		} else {
+			balance = "$0.00";
+
+		}
+
+		System.out.println(firstName + " " + lastName + " will retire in " + retirementAge + " with " + balance
+				+ " in the bank, a vacation home in " + vacationHome + ", and travel by " + transportation + ".");
+	}
 }
